@@ -1,0 +1,1002 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* COLOR */
+    --primary-color: #c5eab3;
+    --secondary-color: #7BCDB6;
+    --third-color: #74B8A5;
+    --four-color: #399997;
+    --five-color: #129CB5;
+    --six-color: #22606B;
+    --seven-color: #666666;
+    --eight-color: #D9D9D9;
+    --nine-color: #ffffff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Tùy chỉnh thanh cuộn trên Chrome và các trình duyệt WebKit */
+/* Thanh cuộn chính */
+::-webkit-scrollbar {
+    width: 8px; /* Chiều rộng của thanh cuộn */
+}
+
+/* Track (phần nền của thanh cuộn) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Màu nền */
+}
+
+/* Thanh cuộn trên khi hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color); /* Màu của thanh cuộn khi hover */
+}
+
+/* Thanh cuộn trên */
+::-webkit-scrollbar-thumb {
+    background: var(--six-color); /* Màu của thanh cuộn */
+    border-radius: 6px; /* Bo tròn các cạnh của thanh cuộn */
+}
+
+/* Corner của thanh cuộn */
+::-webkit-scrollbar-corner {
+    background: transparent; /* Màu của góc thanh cuộn */
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f5f4f8;
+    background-image: url(../../images/BMI.images/background-for-bmi.png);
+    background-size: contain;
+    background-position: 0px 40px;
+}
+
+header {
+    position: relative; /* Đặt vị trí của header thành relative */
+    width: 100%;
+    height: 50px;   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0; /* Đặt z-index của header thành 0 */
+}
+
+/* Các phần tử trong header */
+.header_main,
+.nav {
+    position: relative;
+    z-index: 1; /* Đặt z-index của các phần tử trong header thành 1 để chúng nằm trên before */
+}
+
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+
+nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul .Bao_logo_nav {
+    width: 10%;
+}
+nav ul .Bao_logo_nav a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+nav ul .Bao_logo_nav a img {
+    width: 80%;
+    height: 80%;
+    margin-right: 10px;
+}
+nav ul .Bao_logo_nav a p {
+    color: black;
+    font-weight: bold;
+}
+
+nav ul .Bao_box_function {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+nav ul .Bao_box_function a {
+    text-decoration: none;
+    width: 10%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+    position: relative;
+}
+
+nav ul .Bao_box_function a:hover {
+    color: #22606b;
+}
+
+nav ul .Bao_box_function a::before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    background-color: #22606b;
+    transition: 0.5s;
+}
+
+nav ul .Bao_box_function a:hover::before {
+    transform: scaleX(1);
+}
+
+/* BODY BMI */
+
+.hoang-title {
+    font-size: 30px;
+    margin-top: 5%;
+    margin-left: 8%;
+    font-weight: bold;
+}
+
+.hoang-swirlyarrow {
+    width: 10%;
+    height: 10%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.hoang-menucalculator {
+    box-sizing: border-box;
+    width: 1200px;
+    height: 1000px;
+    margin-left: 25%;
+    margin-top: -20%;
+}
+
+.hoang-bmicalculator, .hoang-bmrcalculator, .hoang-teddcalculator {
+    width: 40%;
+    height: 55%;
+    transition: 0.5s;
+    cursor: pointer;
+    position: absolute;
+}
+
+.hoang-bmicalculator {
+    margin-left: 33%;
+
+}
+
+.hoang-bmrcalculator {
+    margin-top: 15%;
+}
+
+.hoang-teddcalculator {
+    margin-left: 30%;
+    margin-top: 33%;
+}
+
+.hoang-iconpart {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.hoang-spaceforimg {
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
+    border-radius: 30px;
+}
+
+.hoang-imgcalculator {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.36);
+}
+
+.hoang-bmicalculator, .hoang-bmrcalculator, .hoang-teddcalculator span {
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+    position: absolute;
+}
+
+.hoang-bmicalculator:hover {
+    transform: scale(1.05);
+}
+
+.hoang-bmrcalculator:hover {
+    transform: scale(1.05);
+}
+
+.hoang-teddcalculator:hover {
+    transform: scale(1.05);
+}
+
+.hoang-bmicalculator:hover > span {
+    color: #22606b;
+}
+
+.hoang-bmrcalculator:hover > span {
+    color: #22606b;
+}
+
+.hoang-teddcalculator:hover > span {
+    color: #22606b;
+}
+
+.hoang-video {
+    width: 35%;
+    height: 25%;
+    margin-top: -18%;
+    margin-left: 10%;
+    transition: 0.5s;
+    margin-bottom: 70px;
+}
+
+.hoang-video:hover {
+    transform: scale(1.05);
+}
+
+.hoang-video video {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin-bottom: 70px;
+}
+
+.hoang-content {
+    width: 100%;
+    height: 1000px;
+    margin-top: 2%;
+    background-color: white;
+    display: none;
+    border: solid white;
+}
+
+.Bao_point_calculator {
+    width: 90%;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: 6%;
+    display: flex;
+    justify-content:space-between ;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 0 10px rgb(0, 0, 0,0.8 );
+}
+
+.Bao_block_BMI_result,
+.Bao_block_img,
+.Bao_block_BMI {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    color: #383535;
+}
+
+.Bao_block_BMI {
+    padding: 0 30px;
+}
+
+.Bao_block_BMI .block_item {
+    width: 100%;
+    height: 30%;
+}
+.Bao_block_BMI .block_item h3 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.Bao_block_BMI .block_item .box_item {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+}
+
+.Bao_block_BMI .box_gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Bao_block_BMI .box_gender button {
+    width: 45%;
+    height: 100%;
+    border-radius: 2px solid #979595;
+    outline: none;
+    font-size: 1.1em;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.Bao_block_BMI .box_gender button:hover {
+    background-color: var(--bg);
+    color: white;
+}
+
+.Bao_block_BMI .box_gender button.active {
+    background-color: var(--bg);
+    color: white;
+}
+
+.Bao_block_BMI .Bao_content_intro {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Bao_block_BMI .Bao_content_intro h1 {
+    font-size: 2.8em;
+    color: var(--bg);
+}
+
+.Bao_block_BMI .block_item .box_item {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Bao_block_BMI .block_item .box_item input {
+    width: 78%;
+    height: 85%;
+    border: 2px solid #979595;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.Bao_block_BMI .block_item .box_item select {
+    width: 20%;
+    height: 85%;
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 0 10px;
+    padding-right: 0;
+}
+
+.Bao_block_BMI .Bao_box_submit {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bao_block_BMI .Bao_box_submit button {
+    width: 100%;
+    height: 60%;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg);
+    color: white;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.Bao_block_BMI .Bao_box_submit button:hover {
+    border: 2px solid #979595;
+    background-color: white;
+    color: #979595;
+}
+.Bao_block_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bao_block_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.Bao_block_BMI_result {
+    flex-direction: column;
+}
+
+.Bao_block_BMI_result h2 {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    padding-left:10px ;
+}
+
+.Bao_block_BMI_result h2::before {
+    content: "";
+    position: absolute;
+    bottom: 21px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b1adad;
+    border-radius: 5px;
+}
+
+.Bao_block_BMI_result p {
+    width: 80%;
+    height: 10%;
+}
+
+.Bao_block_BMI_result .box_circle {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.Bao_block_BMI_result .box_circle .circle_block {
+    width: 270px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+.Bao_block_BMI_result .box_circle .circle_block .box_circle_item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    transform-origin: 50% 50%;
+    z-index: 3;
+}
+.box_circle_item:nth-child(2) {
+    transform: rotate(0deg);
+    background: #ff9999;
+}
+
+.box_circle_item:nth-child(3) {
+    transform: rotate(90deg);
+    background: #99cc99;
+}
+
+.box_circle_item:nth-child(4) {
+    transform: rotate(180deg);
+    background: #9999ff;
+}
+
+.box_circle_item:nth-child(5) {
+    transform: rotate(270deg);
+    background: #ffcc99;
+}
+
+.Bao_block_BMI_result .box_circle .circle_block .box_circle_span {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* BMR css */
+.Bao_block_BMR_result,
+.Bao_block_img,
+.Bao_block_BMR {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    color: #383535;
+}
+
+.Bao_block_BMR {
+    padding: 0 30px;
+}
+
+.Bao_block_BMR .block_item {
+    width: 100%;
+    height: 30%;
+}
+.Bao_block_BMR .block_item h3 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.Bao_block_BMR .block_item .box_item {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+}
+
+.Bao_block_BMR .box_gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Bao_block_BMR .box_gender button {
+    width: 45%;
+    height: 100%;
+    border-radius: 2px solid #979595;
+    outline: none;
+    font-size: 1.1em;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.Bao_block_BMR .box_gender button:hover {
+    background-color: var(--bg);
+    color: white;
+}
+
+.Bao_block_BMR .box_gender button.active {
+    background-color: var(--bg);
+    color: white;
+}
+
+.Bao_block_BMR .Bao_content_intro {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Bao_block_BMR .Bao_content_intro h1 {
+    font-size: 2.8em;
+    color: var(--bg);
+}
+
+.Bao_block_BMR .block_item .box_item {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Bao_block_BMR .block_item .box_item input {
+    width: 78%;
+    height: 85%;
+    border: 2px solid #979595;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.Bao_block_BMR .block_item .box_item select {
+    width: 20%;
+    height: 85%;
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 0 10px;
+    padding-right: 0;
+}
+
+.Bao_block_BMR .Bao_box_submit {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bao_block_BMR .Bao_box_submit button {
+    width: 100%;
+    height: 60%;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg);
+    color: white;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.Bao_block_BMR .Bao_box_submit button:hover {
+    border: 2px solid #979595;
+    background-color: white;
+    color: #979595;
+}
+.Bao_block_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bao_block_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.Bao_block_BMR_result {
+    flex-direction: column;
+}
+
+.Bao_block_BMR_result h2 {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    padding-left:10px ;
+}
+
+.Bao_block_BMR_result h2::before {
+    content: "";
+    position: absolute;
+    bottom: 21px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b1adad;
+    border-radius: 5px;
+}
+
+.Bao_block_BMR_result p {
+    width: 80%;
+    height: 10%;
+}
+
+.Bao_block_BMR_result .box_circle {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.Bao_block_BMR_result .box_circle .circle_block {
+    width: 270px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+.Bao_block_BMR_result .box_circle .circle_block .box_circle_item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    transform-origin: 50% 50%;
+    z-index: 3;
+}
+.box_circle_item:nth-child(2) {
+    transform: rotate(0deg);
+    background: #ff9999;
+}
+
+.box_circle_item:nth-child(3) {
+    transform: rotate(90deg);
+    background: #99cc99;
+}
+
+.box_circle_item:nth-child(4) {
+    transform: rotate(180deg);
+    background: #9999ff;
+}
+
+.box_circle_item:nth-child(5) {
+    transform: rotate(270deg);
+    background: #ffcc99;
+}
+
+.Bao_block_BMR_result .box_circle .circle_block .box_circle_span {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.detail_circle_color {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.detail_circle_color .content_circle {
+    width: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.8em;
+}
+
+.detail_circle_color .content_circle::before {
+    content: "";
+    position: absolute;
+    top: 26%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--bg);
+}
+
+.box_content_results .item_content {
+    width: 100%;
+    height: 40%;
+}
+
+.box_content_results .item_content .item_span {
+    font-weight: bold;
+}
+
+#progress {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 70px;
+    width: 70px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+#progress-value {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: #001a2e;
+}
+
+#progress-value:hover {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: #001a2e;
+}
+
+/* responsive */
+
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul .Bao_box_function a {
+        font-size: 14px;
+        width: 60px;
+    }
+
+    .hoang-swirlyarrow {
+        display: none;
+    }
+
+    .hoang-menucalculator {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hoang-bmicalculator, .hoang-bmrcalculator, .hoang-teddcalculator {
+        width: 80%;
+        margin: auto;
+        height: 400px;
+
+    }
+
+    .hoang-bmrcalculator {
+        margin-top: 50%;
+    }
+
+    .hoang-teddcalculator {
+        margin-top: 105%;
+    }
+
+    .hoang-video {
+        display: none;
+    }
+
+    .hoang-content {
+        height: 800px;
+        margin-top: 40%;
+    }
+
+    .Bao_point_calculator {
+        width: 95%;
+        height: 90%;
+        margin-left: 2.5%;
+    }
+
+    #progress {
+        width: 50px;
+        height: 50px;
+    }
+
+    #progress-value {
+        height: calc(100% - 5px);
+        width: calc(100% - 5px);
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 456px) {
+    body {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul .Bao_box_function a {
+        font-size: 14px;
+        width: 60px;
+    }
+
+    .hoang-swirlyarrow {
+        display: none;
+    }
+
+    .hoang-menucalculator {
+        width: 100%;
+        margin-left: auto;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hoang-bmicalculator, .hoang-bmrcalculator, .hoang-teddcalculator {
+        width: 90%;
+        height: 300px;
+        margin-left: 5%;
+    }
+
+    .hoang-bmrcalculator {
+        margin-top: 75%;
+    }
+
+    .hoang-teddcalculator {
+        margin-top: 155%;
+    }
+
+    .hoang-video {
+        display: none;
+    }
+
+    .hoang-content {
+        height: 800px;
+        margin-top: 10%;
+    }
+
+    .Bao_block_img {
+        display: none;
+    }
+
+    .Bao_point_calculator {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 80%;
+        margin-left: 5%;
+        margin-top: 6%;
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow: 0 0 10px rgb(0, 0, 0,0.8 );
+    }
+
+    .Bao_block_BMI, .Bao_block_BMR, .Bao_block_TEDD {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .Bao_block_BMI .Bao_content_intro h1 {
+        font-size: 2em;
+    }
+
+    #progress {
+        width: 50px;
+        height: 50px;
+    }
+
+    #progress-value {
+        height: calc(100% - 5px);
+        width: calc(100% - 5px);
+        font-size: 30px;
+    }
+}

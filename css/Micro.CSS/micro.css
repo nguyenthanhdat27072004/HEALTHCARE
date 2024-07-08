@@ -1,0 +1,170 @@
+
+/* Định dạng tiêu đề */
+#subtitle {
+    color: #00796b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container chính của cửa sổ chat */
+#chat-container {
+    display: none;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* Định dạng tin nhắn */
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Định dạng từng tin nhắn */
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+}
+
+.assistant {
+    background-color: #e7f3fe;
+    border-left: 5px solid #2196F3;
+}
+
+.user {
+    background-color: #fff3cd;
+    border-left: 5px solid #FFEB3B;
+}
+
+/* Container của input và nút send */
+#input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Định dạng input text */
+#text-input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-right: 10px;
+    max-width: 200px;
+}
+
+/* Định dạng nút send */
+#send-button {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #004d40;
+}
+
+/* Định dạng nút micro */
+#micro-button-window {
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#micro-button-window:hover {
+    background-color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Định dạng loader */
+#loader {
+    display: none;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Định dạng loader for listen */
+#loaderForListen {
+    display: none;
+    margin-top: 20px;
+}
+
+#loaderForListen img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Định dạng nút close và back */
+#close-button, #back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+}
+
+#close-button {
+    top: 10px;
+    right: 10px;
+}
+
+#back-button {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00796b;
+}
+
+#back-button:hover, #close-button:hover {
+    opacity: 0.8;
+}
+
+#micro-button-window {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}

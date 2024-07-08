@@ -1,0 +1,440 @@
+body {
+    background-color: rgb(225, 225, 225);
+    font-family: sans-serif;
+}
+
+.hoang-menubar {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+#col {
+    width: 150px;
+    text-align: center;
+    font-size: larger;
+}
+
+.hoang-menubar a:link {
+    color:black;  
+    text-decoration: none;
+}
+
+.hoang-menubar a:visited { 
+    color:black; 
+    text-decoration: none;
+}
+
+.hoang-menubar a:hover { 
+    color: green;  
+    text-decoration: none;
+}
+
+.hoang-menubar a:active { 
+    color:green; 
+    text-decoration: none;
+}
+
+#logo {
+    width: 100px;
+    height: 60px;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+#drugs {
+    margin-left: 35%;
+    margin-top: -15px;
+}
+
+#news {
+    margin-left: 10%;
+    margin-top: -55px;
+}
+
+#BMIcal {
+    margin-left: 10%;
+    margin-top: -55px;
+}
+
+#address {
+    margin-left: 10%;
+    margin-top: -55px;
+}
+
+.hoang-linktomainpage {
+    margin-left: 40px;
+    font-size: larger;
+}
+
+.hoang-linktomainpage a:link {
+    color:black;  
+    text-decoration: none;
+}
+
+.hoang-linktomainpage a:visited { 
+    color:black; 
+    text-decoration: none;
+}
+
+.hoang-linktomainpage a:hover { 
+    color: green;  
+    text-decoration: none;
+}
+
+.hoang-linktomainpage a:active { 
+    color:green; 
+    text-decoration: none;
+}
+
+.hoang-price {
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    margin-left: 10%;
+    margin-top: 80px;
+    border-radius: 10px;
+}
+.hoang-slideshow {
+    width: 600px;
+    height: 500px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.hoang-mySlides {
+    display: none;
+    width: 400px;
+    height: 300px;
+    margin-left: 80px;
+}
+
+.cursor {
+cursor: pointer;
+}
+
+.prev {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: 80px;
+    color: green;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: 80px;
+    margin-left: 520px;
+    color: green;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev:hover, .next:hover {
+background-color: rgb(191, 226, 191);
+}
+
+.caption-container {
+text-align: center;
+background-color: #222;
+padding: 2px 16px;
+color: white;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.column {
+float: left;
+width: 110px;
+height: 110px;
+margin-top: 50px;
+border: 2px solid green;
+border-radius: 8px;
+margin-left: 30px;
+}
+
+.demo {
+opacity: 0.6;
+}
+
+.active, .demo:hover {
+opacity: 1;
+}
+
+.hoang-thongtincoban {
+    margin-left: 50%;
+    margin-top: -500px;
+    font-size: 30px;
+}
+
+.hoang-thongtin {
+    font-size: 24px;
+    color: rgb(98, 98, 98);
+}
+
+.hoang-typedrug {
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+.hoang-dangbaoche {
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+.hoang-soluong {
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+.hoang-xuatxu {
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+.hoang-nhasx {
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+#seemore {
+    width: 220px;
+    height: 50px;
+    font-size: 24px;
+    background-color: rgb(164, 235, 164);
+    color: green;
+    border: 1px solid rgb(164, 235, 164);
+    border-radius: 40px;
+}
+
+#findhostpital {
+    width: 270px;
+    height: 50px;
+    font-size: 24px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 40px;
+    margin-left: 20px;
+}
+
+#menuicon {
+    width: 30px;
+    height: 30px;
+}
+
+.menu {
+    position: static;
+    top: .75rem;
+    z-index: 1000;
+    background-color: white;
+    width: 350px;
+}
+
+#mainpart {
+    line-height: 30px;
+    float: left;
+    font-size: medium;
+    font-family: Helvetica;
+    background-color: white;
+    margin-top: -4px;
+}
+
+.menu a:link {
+    color:black;  
+    text-decoration: none;
+}
+
+.menu a:visited { 
+    color:black; 
+    text-decoration: none;
+}
+
+.menu a:hover { 
+    color: green;  
+    text-decoration: none;
+}
+.menu a:active { 
+    color:green; 
+    text-decoration: none;
+}
+
+.information {
+
+    line-height:30px;
+    width:60%;
+    margin-left: 30%;
+    font-size: larger;
+    background-color: white;
+    margin-top: -60px;
+}
+
+#hoang-standfor {
+    width: 70%;
+    margin-left: 30px;
+
+}
+
+#hoang-chidinh {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-hamluong {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-useful {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-hdsd {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-tdp {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-luuy {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#hoang-conclusion {
+    width: 95%;
+    margin-left: 30px;
+}
+
+#picture1 {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+}
+
+#summary{
+    margin: 100px;
+    margin-top: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+#hoang-chidinh{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-standfor{
+    margin-left: 30%;
+    word-wrap: break-word;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-imagethuoc img{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-hamluong{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-useful{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-hdsd{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#hoang-tdp{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-luuy{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-conclusion{
+    margin-left: 30%;
+    width: 50%;
+    background-color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#hoang-thongtinchitiet{
+    word-wrap: break-word;
+}

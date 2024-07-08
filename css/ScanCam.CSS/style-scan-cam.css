@@ -1,0 +1,309 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container-webcam {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.existing-content {
+  padding: 20px;
+  transition: opacity 0.5s;
+}
+
+#webcam-container {
+  display: none;
+  position: fixed;
+  top: 10%; /* Điều chỉnh giá trị này để điều chỉnh khoảng cách từ biên trên */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  height: 480px;
+  z-index: 1000;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loading-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#instructions, #reference {
+  display: none;
+  position: absolute;
+  top: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+#instructions {
+  right: 20px;
+}
+
+#reference {
+  left: 20px;
+}
+
+#instructions img, #reference img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#close-camera {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001; 
+}
+
+#results {
+  display: none;
+  position: fixed;
+  top: calc(10% + 500px); 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1002;
+}
+
+.result-item {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.pill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pill .fill {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  transition: top 0.5s ease-in-out;
+}
+
+.pill .label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+@keyframes wave {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.pill .fill::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: inherit;
+  border-radius: 50%;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.new-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.Product-card-custom {
+  flex: 0 1 calc(33% - 20px); /* Adjust the percentage to control the number of items per row */
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+}
+
+.Product-card-custom img {
+  width: 100%;
+  height: auto;
+}
+
+.Product-information-custom {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.Product-price-custom {
+  font-size: 16px;
+  color: #f44336;
+  margin: 5px 0;
+}
+
+.Product-details-button-custom {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.Product-details-button-custom:hover {
+  background-color: #45a049;
+}
+
+/* New styles added for the updated functionality */
+#result {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1003;
+  width: 80%;
+  max-width: 800px;
+}
+
+#result-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+#result-predict {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+#new-products-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+#not-found-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+}
+
+#not-found-popup .popup-content {
+  width: 100%;
+}
+
+#not-found-popup h1 {
+  margin-bottom: 20px;
+}
+
+#not-found-popup button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#not-found-popup button:hover {
+  background-color: #0056b3;
+}
+
+/* CSS for blurring the content */
+.blur {
+  opacity: 0.2;
+}

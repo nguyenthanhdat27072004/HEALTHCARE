@@ -1,0 +1,59 @@
+/* cssfortestchat.css */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Căn giữa container trong viewport */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.chat-window {
+    height: 400px;
+    overflow-y: auto; /* Cho phép cuộn khi nội dung vượt quá chiều cao */
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Sắp xếp tin nhắn từ trên xuống */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 70%;
+    position: relative;
+}
+
+.message.user {
+    background-color: #dcf8c6;
+    margin-right: 30%; /* Đẩy tin nhắn người dùng sang trái */
+    align-self: flex-start; /* Căn lề bên trái của khung chat */
+}
+
+.message.response {
+    background-color: #ececec;
+    margin-left: 30%; /* Đẩy tin nhắn máy chủ sang phải */
+    align-self: flex-end; /* Căn lề bên phải của khung chat */
+}
+
+.input-area {
+    padding: 10px;
+    display: flex; /* Bố cục linh hoạt cho khu vực nhập */
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1; /* Cho phép phần tử nhập chiếm toàn bộ không gian có sẵn */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
